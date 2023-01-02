@@ -47,7 +47,7 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
             newStamina = 100
         end
 
-        Citizen.InvokeNative(0xE5A3DD2FF84E1A4B, PlayerPedId(), 1, newStamina) -- SetAttributeCoreValue native
+        Citizen.InvokeNative(0xC6258F41D86676E0, PlayerPedId(), 1, newStamina) -- SetAttributeCoreValue native
     end
     if (Config["ItemsToUse"][index]["InnerCoreHealth"] ~= 0) then
         local health = GetAttributeCoreValue(PlayerPedId(), 0)
@@ -57,7 +57,7 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
             newhealth = 100
         end
 
-        Citizen.InvokeNative(0xE5A3DD2FF84E1A4B, PlayerPedId(), 0, newhealth) -- SetAttributeCoreValue native
+        Citizen.InvokeNative(0xC6258F41D86676E0, PlayerPedId(), 0, newhealth) -- SetAttributeCoreValue native
     end
     if (Config["ItemsToUse"][index]["OuterCoreHealth"] ~= 0) then
         local health = GetEntityHealth(PlayerPedId(), 0)
@@ -86,7 +86,7 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
     if (Config["ItemsToUse"][index]["Animation"]['eat']) then
         PlayAnimEat(Config["ItemsToUse"][index]["PropName"])
     else
-        PlayAnimEat(Config["ItemsToUse"][index]["PropName"])
+        PlayAnimDrink(Config["ItemsToUse"][index]["PropName"])
     end
 
     TriggerEvent("vorp:Tip", string.format(Translation["OnUseItem"], label), 3000)
