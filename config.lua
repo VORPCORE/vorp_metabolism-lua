@@ -106,5 +106,8 @@ Translations = {
   },
   ['pt_br'] = {
     ['OnUseItem'] =  "Você consumiu %s"
+  },
+  ['es'] = {
+    ['OnUseItem'] =  "Has consumido %s"
   }
 }
