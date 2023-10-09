@@ -63,9 +63,9 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
         local health = GetEntityHealth(PlayerPedId(), 0)
         local newhealth = health + Config["ItemsToUse"][index]["OuterCoreHealth"]
 
-        if (newhealth > 150) then
+     --[[    if (newhealth > 150) then
             newhealth = 150
-        end
+        end ]]--
         SetEntityHealth(PlayerPedId(), newhealth, 0)
     end
     -- Golds
