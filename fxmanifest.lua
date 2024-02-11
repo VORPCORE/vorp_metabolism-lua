@@ -3,14 +3,13 @@ game 'rdr3'
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 lua54 'yes'
+author 'VORP'
+description 'A metabolism script with HUD for vorp core framework'
+repository 'https://github.com/VORPCORE/vorp_metabolism-lua'
 
 shared_script 'config.lua'
-client_scripts {
-  'client/*.lua'
-}
-server_scripts {
-  'server/*.lua'
-}
+client_script 'client/*.lua'
+server_script 'server/*.lua'
 
 files {
   'ui/hud.html',
