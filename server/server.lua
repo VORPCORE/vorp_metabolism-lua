@@ -29,8 +29,31 @@ RegisterNetEvent("vorpmetabolism:GetStatus", function()
     end
 end)
 
+RegisterNetEvent("vorpmetabolism:GetAllPlayersStatus", function()
+    local players = GetPlayers()
+    for _, playerId in ipairs(players) do
+        local UserCharacter = VorpCore.getUser(tonumber(playerId)).getUsedCharacter
+        local s_status = UserCharacter.status
+        if (#s_status > 5) then
+            TriggerClientEvent("vorpmetabolism:StartFunctions", playerId, s_status)
+        else
+            local status = json.encode({
+                ['Hunger'] = Config["FirstHungerStatus"],
+                ['Thirst'] = Config["FirstThirstStatus"],
+                ['Metabolism'] = Config["FirstMetabolismStatus"]
+            })
+            UserCharacter.setStatus(status)
+            TriggerClientEvent("vorpmetabolism:StartFunctions", playerId, status)
+        end
+    end
+end)
+
 AddEventHandler("onResourceStart", function(resourceName)
-    if (resourceName == "vorp_inventory") then
+    if (resourceName == GetCurrentResourceName()) then
+        SetTimeout(1000, function()
+            TriggerEvent("vorpmetabolism:GetAllPlayersStatus")
+        end)
+    elseif (resourceName == "vorp_inventory") then
         RegisterUsableItemsAsync()
     end
 end)
