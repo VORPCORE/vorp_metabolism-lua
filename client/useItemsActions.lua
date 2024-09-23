@@ -1,3 +1,7 @@
+local T = Translation.Langs[Config.Lang]
+
+
+
 RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
     PlaySoundFrontend("Core_Fill_Up", "Consumption_Sounds", true, 0)
 
@@ -93,7 +97,7 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
 		ScreenEffect(Config["ItemsToUse"][index]["Effect"], Config["ItemsToUse"][index]["EffectDuration"])
 	end
         
-    TriggerEvent("vorp:Tip", string.format(Translation["OnUseItem"], label), 3000)
+    TriggerEvent("vorp:Tip", string.format(T.OnUseItem, label), 3000)
 end)
 
 function ScreenEffect(effect, durationMinutes)
