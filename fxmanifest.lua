@@ -7,7 +7,10 @@ author 'VORP'
 description 'A metabolism script with HUD for vorp core framework'
 repository 'https://github.com/VORPCORE/vorp_metabolism-lua'
 
-shared_script 'config.lua'
+shared_scripts {
+  'config.lua',
+  'languages/translation.lua'
+}
 client_script 'client/*.lua'
 server_script 'server/*.lua'
 
