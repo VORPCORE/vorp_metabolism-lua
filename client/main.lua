@@ -1,4 +1,4 @@
-Translation = Translation[Config.Locale]
+Translation = Translation[Config.Langs]
 
 PlayerStatus = {}
 local loaded = false
