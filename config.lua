@@ -1,5 +1,5 @@
 Config = {
-  Lang = "en",                         -- Set the language for your script (you can change this if you support multiple languages).
+  Langs = "en",                         -- Set the language for your script (you can change this if you support multiple languages).
 
   UseMetabolism = true,                -- Enable/disable metabolism system. If true, metabolism effects like stamina and hunger will affect players.
 
