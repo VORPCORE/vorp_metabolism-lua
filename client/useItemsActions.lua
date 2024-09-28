@@ -1,4 +1,4 @@
-local T = Translation.Langs[Config.Lang]
+local T = Translation.Langs[Config.Langs]
 
 
 
