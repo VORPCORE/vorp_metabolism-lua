@@ -1,5 +1,4 @@
 Translation = {}
-
 Translation.Langs = {
     ['en'] = {
         OnUseItem = "You have consumed %s"
@@ -10,5 +9,5 @@ Translation.Langs = {
     ['es'] = {
         OnUseItem = "Has consumido %s"
     }
-  }
+}
   
