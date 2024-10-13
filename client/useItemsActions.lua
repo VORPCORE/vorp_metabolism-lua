@@ -1,4 +1,5 @@
-local T = Translation.Langs[Config.Langs]
+local T             = Translation.Langs[Config.Langs]
+local Core          = exports.vorp_core:GetCore()
 
 
 
@@ -97,7 +98,7 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
 		ScreenEffect(Config["ItemsToUse"][index]["Effect"], Config["ItemsToUse"][index]["EffectDuration"])
 	end
         
-    TriggerEvent("vorp:Tip", string.format(T.OnUseItem, label), 3000)
+    Core.NotifyTip(string.format(T.OnUseItem, label), 3000)
 end)
 
 function ScreenEffect(effect, durationMinutes)
