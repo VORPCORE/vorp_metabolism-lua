@@ -26,14 +26,50 @@ body {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 1.65vw;
-    padding-left: 3.047vw;
+    padding-bottom: 270px;
+    padding-left: 205px;
 }
 
 .pb-vorp-food {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 1.20vw;
-    padding-left: 2.65vw;
+    padding-bottom: 270px;
+    padding-left: 155px;
 }
+
+.water {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.water-icon {
+    display: flex;
+    position: absolute;
+    top: 21px;
+    left: 176px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+}
+
+.food {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.food-icon {
+    display: flex;
+    position: absolute;
+    top: 21px;
+    left: 227px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+}
+
+/* Hud redesigned by Z-eus */

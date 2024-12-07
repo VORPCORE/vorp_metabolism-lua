@@ -6,6 +6,14 @@ This script integrates a metabolism system into your RedM server, allowing playe
 
 ---
 
+## New Design
+
+<img alt="image" src="https://github.com/user-attachments/assets/30843aef-9598-41a1-a21f-50fec3af4bc3">
+
+__Hud redesigned by Z-eus__
+
+---
+
 ## Features
 
 - **Metabolism System**: Manages hunger, thirst, and metabolism stats, with configurable rates for each.

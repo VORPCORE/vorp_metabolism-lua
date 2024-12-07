@@ -19,18 +19,20 @@
     <!-- Water -->
     <div class="pb-vorp-water">
         <div class="water"></div>
+        <img src="img/water.png" class="water-icon">
     </div>
 
     <!-- Food -->
     <div class="pb-vorp-food">
         <div class="food"></div>
+        <img src="img/food.png" class="food-icon">
     </div>
 
     <script type="text/javascript">
         $("document").ready(function() {
 
-            var sizeWater = 224.90;
-            var sizeFood = 240.0;
+            var sizeWater = 43.0;
+            var sizeFood = 43.0;
 
             if ($(window).width() == 1920 && $(window).height() == 1080) {
 
@@ -47,7 +49,7 @@
                 size: sizeWater,
                 thickness: 4,
                 fill: {
-                    gradient: ['#05D5EA']
+                    color: ['#FFFFFF'] /* Old Fill Type: gradient - Old Color [#05D5EA] */
                 },
             });
             barfood.circleProgress({
@@ -55,7 +57,7 @@
                 size: sizeFood,
                 thickness: 4,
                 fill: {
-                    color: ['#FF5733']
+                    color: ['#FFFFFF'] /* Old Fill Type: color - Old Color [#FF5733] */
                 },
             });
 
@@ -65,10 +67,14 @@
                     barfood.circleProgress('value', event.data.food);
                 } else if (event.data.action == "hide") {
                     $('.water').fadeOut();
+                    $('.water-icon').fadeOut();
                     $('.food').fadeOut();
+                    $('.food-icon').fadeOut();
                 } else if (event.data.action == "show") {
                     $('.water').fadeIn();
+                    $('.water-icon').fadeIn();
                     $('.food').fadeIn();
+                    $('.food-icon').fadeIn();
                 }
             });
 
