@@ -1,10 +1,13 @@
-local VorpCore = {}
+local VorpCore = exports.vorp_core:GetCore()
 
 CreateThread(function()
-    TriggerEvent("getCore", function(core)
-        VorpCore = core;
-    end)
-    RegisterUsableItemsAsync()
+    for i = 1, #Config.ItemsToUse, 1 do
+        exports.vorp_inventory:registerUsableItem(Config["ItemsToUse"][i]["Name"], function(data)
+            local itemLabel = data.item.label
+            TriggerClientEvent("vorpmetabolism:useItem", data.source, i, itemLabel)
+            exports.vorp_inventory:subItemById(data.source, data.item.mainid)
+        end)
+    end
 end)
 
 RegisterNetEvent("vorpmetabolism:SaveLastStatus", function(status)
@@ -12,6 +15,7 @@ RegisterNetEvent("vorpmetabolism:SaveLastStatus", function(status)
     local UserCharacter = VorpCore.getUser(_source).getUsedCharacter
     UserCharacter.setStatus(status)
 end)
+
 RegisterNetEvent("vorpmetabolism:GetStatus", function()
     local _source = source
     local UserCharacter = VorpCore.getUser(_source).getUsedCharacter
@@ -28,21 +32,3 @@ RegisterNetEvent("vorpmetabolism:GetStatus", function()
         TriggerClientEvent("vorpmetabolism:StartFunctions", _source, status)
     end
 end)
-
-AddEventHandler("onResourceStart", function(resourceName)
-    if (resourceName == "vorp_inventory") then
-        RegisterUsableItemsAsync()
-    end
-end)
-
-function RegisterUsableItemsAsync()
-    Wait(3000)
-    print(("Metabolism: Loading %s items usables"):format(#Config["ItemsToUse"]))
-    for i=1, #Config.ItemsToUse, 1 do
-        exports.vorp_inventory:registerUsableItem(Config["ItemsToUse"][i]["Name"], function(data)
-            local itemLabel = data.item.label
-            TriggerClientEvent("vorpmetabolism:useItem", data.source, i, itemLabel)
-            TriggerEvent("vorpCore:subItem", data.source, Config["ItemsToUse"][i]["Name"], 1)
-        end)
-    end
-end
