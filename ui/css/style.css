@@ -26,16 +26,16 @@ body {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 270px;
-    padding-left: 205px;
+    padding-bottom: 300px; /* 270px */
+    padding-left: 57px; /* 205px */
 }
 
 .pb-vorp-food {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 270px;
-    padding-left: 155px;
+    padding-bottom: 318px; /* 270px */
+    padding-left: 105px; /* 155px */
 }
 
 .water {
@@ -47,8 +47,8 @@ body {
 .water-icon {
     display: flex;
     position: absolute;
-    top: 21px;
-    left: 176px;
+    top: 21px; /* 21px */
+    left: 78px; /* 176px */
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 40px;
@@ -64,8 +64,8 @@ body {
 .food-icon {
     display: flex;
     position: absolute;
-    top: 21px;
-    left: 227px;
+    top: 21px; /* 21px */
+    left: 126px; /* 227px */
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 40px;
