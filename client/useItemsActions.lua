@@ -1,7 +1,5 @@
-local T             = Translation.Langs[Config.Langs]
-local Core          = exports.vorp_core:GetCore()
-
-
+local T    = Translation.Langs[Config.Langs]
+local Core = exports.vorp_core:GetCore()
 
 RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
     PlaySoundFrontend("Core_Fill_Up", "Consumption_Sounds", true, 0)
@@ -65,12 +63,12 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
         Citizen.InvokeNative(0xC6258F41D86676E0, PlayerPedId(), 0, newhealth) -- SetAttributeCoreValue native
     end
     if (Config["ItemsToUse"][index]["OuterCoreHealth"] ~= 0) then
-        local health = GetEntityHealth(PlayerPedId(), 0)
+        local health = GetEntityHealth(PlayerPedId())
         local newhealth = health + Config["ItemsToUse"][index]["OuterCoreHealth"]
 
-     --[[    if (newhealth > 150) then
+        --[[    if (newhealth > 150) then
             newhealth = 150
-        end ]]--
+        end ]] --
         SetEntityHealth(PlayerPedId(), newhealth, 0)
     end
     -- Golds
@@ -94,10 +92,10 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
         PlayAnimDrink(Config["ItemsToUse"][index]["PropName"])
     end
 
-	if (Config["ItemsToUse"][index]["Effect"] ~= "") then
-		ScreenEffect(Config["ItemsToUse"][index]["Effect"], Config["ItemsToUse"][index]["EffectDuration"])
-	end
-        
+    if (Config["ItemsToUse"][index]["Effect"] ~= "") then
+        ScreenEffect(Config["ItemsToUse"][index]["Effect"], Config["ItemsToUse"][index]["EffectDuration"])
+    end
+
     Core.NotifyTip(string.format(T.OnUseItem, label), 3000)
 end)
 
@@ -125,13 +123,15 @@ function PlayAnimDrink(propName)
 
     local hashItem = GetHashKey(propName)
 
-    local prop = CreateObject(hashItem, playerCoords.x, playerCoords.y, playerCoords.z + 0.2, true, true, false, false, true)
+    local prop = CreateObject(hashItem, playerCoords.x, playerCoords.y, playerCoords.z + 0.2, true, true, false, false,
+        true)
     local boneIndex = GetEntityBoneIndexByName(PlayerPedId(), "SKEL_R_Finger12")
 
     Wait(1000)
 
     TaskPlayAnim(PlayerPedId(), dict, anim, 1.0, 8.0, 5000, 31, 0.0, false, false, false)
-    AttachEntityToEntity(prop, PlayerPedId(), boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
+    AttachEntityToEntity(prop, PlayerPedId(), boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1,
+        true)
     Wait(6000)
 
     DeleteObject(prop)
@@ -155,15 +155,26 @@ function PlayAnimEat(propName)
 
     local hashItem = GetHashKey(propName)
 
-    local prop = CreateObject(hashItem, playerCoords.x, playerCoords.y, playerCoords.z + 0.2, true, true, false, false, true)
+    local prop = CreateObject(hashItem, playerCoords.x, playerCoords.y, playerCoords.z + 0.2, true, true, false, false,
+        true)
     local boneIndex = GetEntityBoneIndexByName(PlayerPedId(), "SKEL_R_Finger12")
 
     Wait(1000)
 
     TaskPlayAnim(PlayerPedId(), dict, anim, 1.0, 8.0, 5000, 31, 0.0, false, false, false)
-    AttachEntityToEntity(prop, PlayerPedId(), boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
+    AttachEntityToEntity(prop, PlayerPedId(), boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1,
+        true)
     Wait(6000)
 
     DeleteObject(prop)
     ClearPedSecondaryTask(PlayerPedId())
 end
+
+--on resource start
+AddEventHandler('onResourceStart', function(resourceName)
+    if Config.DevMode then
+        if (GetCurrentResourceName() == resourceName) then
+            TriggerServerEvent("vorpmetabolism:GetStatus")
+        end
+    end
+end)

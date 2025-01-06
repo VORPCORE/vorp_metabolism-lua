@@ -6,6 +6,7 @@ CreateThread(function()
             local itemLabel = data.item.label
             TriggerClientEvent("vorpmetabolism:useItem", data.source, i, itemLabel)
             exports.vorp_inventory:subItemById(data.source, data.item.mainid)
+            exports.vorp_inventory:closeInventory(data.source)
         end)
     end
 end)
