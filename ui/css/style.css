@@ -26,16 +26,16 @@ body {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 300px; /* 270px */
-    padding-left: 57px; /* 205px */
+    padding-bottom: 318px; /* 270px */
+    padding-left: 105px; /* 205px */
 }
 
 .pb-vorp-food {
     display: flex;
     position: absolute;
     bottom: 0;
-    padding-bottom: 318px; /* 270px */
-    padding-left: 105px; /* 155px */
+    padding-bottom: 300px; /* 270px */
+    padding-left: 57px; /* 155px */
 }
 
 .water {
