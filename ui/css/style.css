@@ -51,8 +51,8 @@ body {
     left: 78px; /* 176px */
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 40px;
-    height: 40px;
+    width: 2.08vw; /* 40px */
+    height: 2.08vw; /* 40px */
 }
 
 .food {
@@ -68,8 +68,8 @@ body {
     left: 126px; /* 227px */
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 40px;
-    height: 40px;
+    width: 2.08vw; /* 40px */
+    height: 2.08vw; /* 40px */
 }
 
 /* Hud redesigned by Z-eus */
