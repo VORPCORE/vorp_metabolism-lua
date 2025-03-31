@@ -1,4 +1,4 @@
-# Vorp Metabolism and Consumables Script
+# VORP Metabolism and Consumables Script
 
 ## Overview
 
