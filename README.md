@@ -6,9 +6,8 @@ This script integrates a metabolism system into your RedM server, allowing playe
 
 ## New Design
 
-<img alt="image" src="https://github.com/user-attachments/assets/30843aef-9598-41a1-a21f-50fec3af4bc3">
-
-
+<img alt="image" height="450" src="https://github.com/user-attachments/assets/6ec829ac-112d-4c90-86f5-78c34cc56775">
+<img alt="image" height="450" src="https://github.com/user-attachments/assets/29dbda2f-2354-4425-adf9-0f7c3251a700">
 
 __Hud redesigned by Z-eus__
 
