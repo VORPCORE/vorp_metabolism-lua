@@ -1,18 +1,15 @@
-# Vorp Metabolism and Consumables Script
+# VORP Metabolism and Consumables Script
 
 ## Overview
 
 This script integrates a metabolism system into your RedM server, allowing players to manage their **thirst**, **hunger**, and **metabolism**. Additionally, it allows players to consume items that affect these stats, such as food and beverages. The script also provides support for visual effects (like being drunk) when consuming certain items.
 
----
-
 ## New Design
 
-<img alt="image" src="https://github.com/user-attachments/assets/30843aef-9598-41a1-a21f-50fec3af4bc3">
+<img alt="image" height="450" src="https://github.com/user-attachments/assets/6ec829ac-112d-4c90-86f5-78c34cc56775">
+<img alt="image" height="450" src="https://github.com/user-attachments/assets/29dbda2f-2354-4425-adf9-0f7c3251a700">
 
 __Hud redesigned by Z-eus__
-
----
 
 ## Features
 
@@ -21,11 +18,7 @@ __Hud redesigned by Z-eus__
 - **Effects System**: Allows application of visual effects (e.g., `PlayerDrunkSaloon1`) when players consume certain items. 
 - **Configurable Animations**: Each consumable has its associated animation (e.g., drink, eat).
 
----
-
 ## Configuration
-
-### Configurable Parameters
 
 The following are key settings that control the metabolism system:
 
@@ -70,7 +63,7 @@ To add a new consumable item, follow this structure:
 }
 ```
 
-## Example:
+### Example:
 ```lua
 {
     Name = "whisky",
@@ -87,7 +80,6 @@ To add a new consumable item, follow this structure:
 }
 ```
 
----
 ### **Important**: Ensure the Item is Added to the Database
 
 You must make sure the item you're adding to the `config.lua` is also added to your **items table in the database**. This ensures that the item can be properly used in-game.
@@ -105,21 +97,8 @@ Effect = "effect_name" -- The visual effect to apply (e.g., PlayerDrunkSaloon1).
 EffectDuration = 1 -- Duration of the effect in minutes.
 ```
 If you don’t want an item to have an effect, simply leave the Effect and EffectDuration fields empty.
----
-## Installation
-
-1. Download the script and place it in your `resources` folder.
-2. Add the following to your `server.cfg`:
-```cfg
-    ensure metabolism_script
-```
-3. Edit the `config.lua` to customize the items and metabolism system to your server's needs.
-4. Add consumable items into your server through the item framework you are using (such as VORP).
-
----
 
 ## How to Use
-
 
 ### Configuring Items:
 - Open the `config.lua` file, and under the `ItemsToUse` section, add any consumable items as demonstrated in the examples above.
@@ -127,19 +106,19 @@ If you don’t want an item to have an effect, simply leave the Effect and Effec
 ### In-Game Usage:
 - Players will be able to use these items to restore hunger, thirst, and other stats, as well as trigger any visual effects you have set (e.g., getting drunk when drinking whisky).
 
+## Installation
 
+- Place `vorp_metabolism` into your `resources` folder
+- Add `ensure vorp_metabolism` to your `server.cfg` / `resources.cfg` file
 
-[Discord VORP](https://discord.gg/23MPbQ6)
-
-## Requirements
-- [VORP-Core-Lua](https://github.com/VORPCORE/vorp-core-lua)
-
----
+## Dependencies
+- [vorp_core](https://github.com/VORPCORE/vorp-core-lua)
 
 ## Credits
-Original script:
- - [VORP-Metabolism](https://github.com/VORPCORE/VORP-Metabolism) This script was based on this C# version.
+- [VORP-Metabolism](https://github.com/VORPCORE/VORP-Metabolism) (Original script) This script was based on this C# version.
+- [DX#2201](https://github.com/DX-BR) (Developer)
+- [victorBOY#3179](https://github.com/vWernay) (Developer)
+- [Z-eus](https://github.com/Z-eus) (HUD Redesign)
 
-Developers:
- - [DX#2201](https://github.com/DX-BR)
- - [victorBOY#3179](https://github.com/vWernay)
+## Support
+[VORP Core Discord](https://discord.gg/JjNYMnDKMf)
