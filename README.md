@@ -17,6 +17,7 @@ __Hud redesigned by Z-eus__
 - **Consumable Items**: Items such as food and drinks that restore thirst, hunger, and stamina.
 - **Effects System**: Allows application of visual effects (e.g., `PlayerDrunkSaloon1`) when players consume certain items. 
 - **Configurable Animations**: Each consumable has its associated animation (e.g., drink, eat).
+- **Give Back Item:** Item given back to the player after consumable
 
 ## Configuration
 
@@ -59,7 +60,9 @@ To add a new consumable item, follow this structure:
     PropName = "prop_name", -- The in-game prop to display while using the item.
     Animation = "eat/drink", -- The animation played when consuming the item.
     Effect = "effect_name", -- (Optional) Any visual effect applied when consuming the item.
-    EffectDuration = 1 -- (Optional) Duration of the effect in minutes.
+    EffectDuration = 1, -- (Optional) Duration of the effect in minutes.
+      GiveBackItem = "item_spawn_code",    -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
+      GiveBackItemAmount = 1            -- The amount of given back item
 }
 ```
 
@@ -76,7 +79,9 @@ To add a new consumable item, follow this structure:
     PropName = "s_inv_whiskey02x",
     Animation = "drink",
     Effect = "PlayerDrunkSaloon1", -- Visual drunk effect
-    EffectDuration = 1 -- Effect lasts 1 minute
+    EffectDuration = 1, -- Effect lasts 1 minute
+    GiveBackItem = "empty_bottle",
+    GiveBackItemAmount = 1
 }
 ```
 

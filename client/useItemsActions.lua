@@ -1,6 +1,3 @@
-local T    = Translation.Langs[Config.Langs]
-local Core = exports.vorp_core:GetCore()
-
 RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
     PlaySoundFrontend("Core_Fill_Up", "Consumption_Sounds", true, 0)
 
@@ -95,8 +92,6 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
     if (Config["ItemsToUse"][index]["Effect"] ~= "") then
         ScreenEffect(Config["ItemsToUse"][index]["Effect"], Config["ItemsToUse"][index]["EffectDuration"])
     end
-
-    Core.NotifyTip(string.format(T.OnUseItem, label), 3000)
 end)
 
 function ScreenEffect(effect, durationMinutes)

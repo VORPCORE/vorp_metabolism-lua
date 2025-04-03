@@ -1,11 +1,30 @@
 local VorpCore = exports.vorp_core:GetCore()
+local T    = Translation.Langs[Config.Langs]
 
 CreateThread(function()
     for i = 1, #Config.ItemsToUse, 1 do
         exports.vorp_inventory:registerUsableItem(Config["ItemsToUse"][i]["Name"], function(data)
             local itemLabel = data.item.label
-            TriggerClientEvent("vorpmetabolism:useItem", data.source, i, itemLabel)
+            local usedItems = Config["ItemsToUse"][i]
+            local notification
+            TriggerClientEvent("vorpmetabolism:useItem", data.source, i, itemLabel, usedItems.GiveBackItem, usedItems.GiveBackItemAmount)
+            notification = string.format(T.OnUseItem, itemLabel)
             exports.vorp_inventory:subItemById(data.source, data.item.mainid)
+
+            if usedItems.GiveBackItem and usedItems.GiveBackItem ~= "" then
+                local giveBackItemLabel
+                exports.vorp_inventory:getItem(data.source, usedItems.GiveBackItem, function(giveBackItemLabelData)
+                    giveBackItemLabel = giveBackItemLabelData.label
+                end)
+                local giveBackItemAmount = tonumber(usedItems.GiveBackItemAmount)
+                if exports.vorp_inventory:canCarryItem(data.source, usedItems.GiveBackItem, usedItems.GiveBackItemAmount) then
+                    notification = string.format(T.OnUseItemWithReturn, itemLabel, giveBackItemLabel, giveBackItemAmount)
+                    exports.vorp_inventory:addItem(data.source, usedItems.GiveBackItem, usedItems.GiveBackItemAmount)
+                else
+                    notification = string.format(T.CantCarry, itemLabel, giveBackItemAmount, giveBackItemLabel)
+                end
+            end
+            VorpCore.NotifyTip(data.source, notification, 4000)
             exports.vorp_inventory:closeInventory(data.source)
         end)
     end
