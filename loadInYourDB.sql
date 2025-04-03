@@ -4,3 +4,4 @@ INSERT INTO `items`(`item`, `label`, `limit`, `can_remove`, `type`, `usable`) VA
 INSERT INTO `items`(`item`, `label`, `limit`, `can_remove`, `type`, `usable`) VALUES ('consumable_medicine', 'Medicina', 3, 1, 'item_standard', 1);
 INSERT INTO `items`(`item`, `label`, `limit`, `can_remove`, `type`, `usable`) VALUES ('consumable_peach', 'Melocoton', 5, 1, 'item_standard', 1);
 INSERT INTO `items`(`item`, `label`, `limit`, `can_remove`, `type`, `usable`) VALUES ('consumable_salmon_can', 'Lata de Salmon', 5, 1, 'item_standard', 1);
+INSERT INTO `items`(`item`, `label`, `limit`, `can_remove`, `type`, `usable`) VALUES ('empty_bottle', 'Empty Bottle', 5, 1, 'item_standard', 1);
