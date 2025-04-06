@@ -24,24 +24,24 @@ __Hud redesigned by Z-eus__
 The following are key settings that control the metabolism system:
 
 ```lua
-Lang = "en" -- Language of the script.
+Lang = "en"                                 -- Language of the script.
 
-UseMetabolism = true -- Enable/disable the metabolism system.
+UseMetabolism = true                        -- Enable/disable the metabolism system.
 
-EveryTimeStatusDown = 3600 -- Interval in milliseconds for the status drop (3.6 seconds).
-HowAmountThirstWhileRunning = 3 -- How much thirst drops when running.
-HowAmountHungerWhileRunning = 2 -- How much hunger drops when running.
-HowAmountThirst = 2 -- How much thirst drops while idle.
-HowAmountHunger = 1 -- How much hunger drops while idle.
-HowAmountMetabolismWhileRunning = 4 -- How much metabolism decreases while running.
-HowAmountMetabolism = 2 -- How much metabolism decreases while idle.
+EveryTimeStatusDown = 3600                  -- Interval in milliseconds for the status drop (3.6 seconds).
+HowAmountThirstWhileRunning = 3             -- How much thirst drops when running.
+HowAmountHungerWhileRunning = 2             -- How much hunger drops when running.
+HowAmountThirst = 2                         -- How much thirst drops while idle.
+HowAmountHunger = 1                         -- How much hunger drops while idle.
+HowAmountMetabolismWhileRunning = 4         -- How much metabolism decreases while running.
+HowAmountMetabolism = 2                     -- How much metabolism decreases while idle.
 
-FirstHungerStatus = 1000 -- Initial hunger value (full).
-FirstThirstStatus = 1000 -- Initial thirst value (full).
+FirstHungerStatus = 1000                    -- Initial hunger value (full).
+FirstThirstStatus = 1000                    -- Initial thirst value (full).
 
-OnRespawnHungerStatus = 1000 -- Hunger status after respawning.
-OnRespawnThirstStatus = 1000 -- Thirst status after respawning.
-FirstMetabolismStatus = 0 -- Initial metabolism status.
+OnRespawnHungerStatus = 1000                -- Hunger status after respawning.
+OnRespawnThirstStatus = 1000                -- Thirst status after respawning.
+FirstMetabolismStatus = 0                   -- Initial metabolism status.
 
 
 ### How to Add Consumable Items
@@ -50,19 +50,20 @@ To add a new consumable item, follow this structure:
 
 ```lua
 {
-    Name = "item_spawn_code", -- The spawn code/identifier of the item.
-    Thirst = 500, -- How much thirst this item replenishes (set to 0 if no thirst is restored).
-    Hunger = 100, -- How much hunger this item replenishes.
-    Metabolism = 150, -- How much metabolism is affected.
-    Stamina = 50, -- How much stamina is restored.
-    InnerCoreHealth = 50, -- How much inner core health is affected.
-    OuterCoreHealth = 25, -- How much outer core health is affected.
-    PropName = "prop_name", -- The in-game prop to display while using the item.
-    Animation = "eat/drink", -- The animation played when consuming the item.
-    Effect = "effect_name", -- (Optional) Any visual effect applied when consuming the item.
-    EffectDuration = 1, -- (Optional) Duration of the effect in minutes.
-      GiveBackItem = "item_spawn_code",    -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
-      GiveBackItemAmount = 1            -- The amount of given back item
+    Name = "item_spawn_code",            -- The spawn code/identifier of the item.
+    Thirst = 500,                        -- How much thirst this item replenishes (set to 0 if no thirst is restored).
+    Hunger = 100,                        -- How much hunger this item replenishes.
+    Metabolism = 150,                    -- How much metabolism is affected.
+    Stamina = 50,                        -- How much stamina is restored.
+    InnerCoreHealth = 50,                -- How much inner core health is affected.
+    OuterCoreHealth = 25,                -- How much outer core health is affected.
+    PropName = "prop_name",              -- The in-game prop to display while using the item.
+    Animation = "eat/drink",             -- The animation played when consuming the item.
+    Effect = "effect_name",              -- (Optional) Any visual effect applied when consuming the item.
+    EffectDuration = 1,                  -- (Optional) Duration of the effect in minutes.
+    GiveBackItemLabel = "item_label",    -- The display name of the GiveBackItem.
+    GiveBackItem = "item_spawn_code",    -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
+    GiveBackItemAmount = 1               -- The amount of given back item
 }
 ```
 
@@ -78,8 +79,9 @@ To add a new consumable item, follow this structure:
     OuterCoreHealth = 25,
     PropName = "s_inv_whiskey02x",
     Animation = "drink",
-    Effect = "PlayerDrunkSaloon1", -- Visual drunk effect
-    EffectDuration = 1, -- Effect lasts 1 minute
+    Effect = "PlayerDrunkSaloon1",      -- Visual drunk effect
+    EffectDuration = 1,                 -- Effect lasts 1 minute
+    GiveBackItemLabel = "Empty Bottle",
     GiveBackItem = "empty_bottle",
     GiveBackItemAmount = 1
 }

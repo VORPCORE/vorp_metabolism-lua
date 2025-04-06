@@ -4,6 +4,13 @@ Config = {
 
   UseMetabolism = true,                -- Enable/disable metabolism system. If true, metabolism effects like stamina and hunger will affect players.
 
+  AdminCommandEnable = true,          -- Enable/Disable the admin command that fills metabolism(Thirst/Hunger) values.
+  AdminGroups = {
+    admin = true,
+    -- You can add more
+  },
+  AdminCommand = "consumableAdmin",
+
   EveryTimeStatusDown = 3600,          -- Time interval (in milliseconds) for status drop (3.6 seconds).
   HowAmountThirstWhileRunning = 3,     -- How much thirst decreases while running (value decreases every 3.6 seconds).
   HowAmountHungerWhileRunning = 2,     -- How much hunger decreases while running.
@@ -32,19 +39,20 @@ Config = {
 
   ItemsToUse = {
     {
-      Name = "whisky",                  -- The spawn code or identifier for this item.
-      Thirst = 500,                     -- How much this item replenishes the player's thirst.
-      Hunger = 0,                       -- How much this item replenishes the player's hunger.
-      Metabolism = 150,                 -- How much metabolism is affected (positive or negative).
-      Stamina = 50,                     -- How much stamina is affected by consuming this item.
-      InnerCoreHealth = 50,             -- Effect on the player's inner core health.
-      OuterCoreHealth = 25,             -- Effect on the player's outer core health.
-      PropName = "s_inv_whiskey02x",    -- The in-game prop model to display when using this item.
-      Animation = "drink",              -- The animation the player will use when consuming this item (e.g., drink or eat).
-      Effect = "PlayerDrunkSaloon1",    -- The visual effect applied to the player. This is the 'drunk' effect. For more effects, see the linked URL below.
-      EffectDuration = 1,               -- Duration of the effect in minutes (this script converts 1 to 60 seconds).
-      GiveBackItem = "empty_bottle",    -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
-      GiveBackItemAmount = 1            -- The amount of given back item
+      Name = "whisky",                      -- The spawn code or identifier for this item.
+      Thirst = 500,                         -- How much this item replenishes the player's thirst.
+      Hunger = 0,                           -- How much this item replenishes the player's hunger.
+      Metabolism = 150,                     -- How much metabolism is affected (positive or negative).
+      Stamina = 50,                         -- How much stamina is affected by consuming this item.
+      InnerCoreHealth = 50,                 -- Effect on the player's inner core health.
+      OuterCoreHealth = 25,                 -- Effect on the player's outer core health.
+      PropName = "s_inv_whiskey02x",        -- The in-game prop model to display when using this item.
+      Animation = "drink",                  -- The animation the player will use when consuming this item (e.g., drink or eat).
+      Effect = "PlayerDrunkSaloon1",        -- The visual effect applied to the player. This is the 'drunk' effect. For more effects, see the linked URL below.
+      EffectDuration = 1,                   -- Duration of the effect in minutes (this script converts 1 to 60 seconds).
+      GiveBackItemLabel = "Empty Bottle",   -- The display name of the GiveBackItem.
+      GiveBackItem = "empty_bottle",        -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
+      GiveBackItemAmount = 1                -- The amount of given back item
     },
     {
       Name = "wine",
@@ -58,6 +66,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -73,6 +82,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -88,6 +98,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -103,6 +114,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -118,6 +130,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -133,6 +146,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -148,6 +162,7 @@ Config = {
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
       EffectDuration = 1,
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -176,6 +191,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -191,6 +207,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -206,6 +223,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -225,6 +243,7 @@ Config = {
       Animation = "drink",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -240,6 +259,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -255,6 +275,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -270,6 +291,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -285,6 +307,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -300,6 +323,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -315,6 +339,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -330,6 +355,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -345,6 +371,7 @@ Config = {
       Animation = "drink",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -360,6 +387,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -375,6 +403,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -390,6 +419,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -405,6 +435,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -420,6 +451,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -435,6 +467,7 @@ Config = {
       Animation = "drink",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -450,6 +483,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -465,6 +499,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -480,6 +515,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -495,6 +531,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -510,6 +547,7 @@ Config = {
       Animation = "drink",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -525,6 +563,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -540,6 +579,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -555,6 +595,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -570,6 +611,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -585,6 +627,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -600,6 +643,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -615,6 +659,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -630,6 +675,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -645,6 +691,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -660,6 +707,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -675,6 +723,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -690,6 +739,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -705,6 +755,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -720,6 +771,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -735,6 +787,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     },
@@ -750,6 +803,7 @@ Config = {
       Animation = "eat",
       Effect = "",
       EffectDuration = "",
+      GiveBackItemLabel = "",
       GiveBackItem = "",
       GiveBackItemAmount = 1
     }

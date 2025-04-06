@@ -12,16 +12,12 @@ CreateThread(function()
             exports.vorp_inventory:subItemById(data.source, data.item.mainid)
 
             if usedItems.GiveBackItem and usedItems.GiveBackItem ~= "" then
-                local giveBackItemLabel
-                exports.vorp_inventory:getItem(data.source, usedItems.GiveBackItem, function(giveBackItemLabelData)
-                    giveBackItemLabel = giveBackItemLabelData.label
-                end)
                 local giveBackItemAmount = tonumber(usedItems.GiveBackItemAmount)
                 if exports.vorp_inventory:canCarryItem(data.source, usedItems.GiveBackItem, usedItems.GiveBackItemAmount) then
-                    notification = string.format(T.OnUseItemWithReturn, itemLabel, giveBackItemLabel, giveBackItemAmount)
+                    notification = string.format(T.OnUseItemWithReturn, itemLabel, usedItems.GiveBackItemLabel, giveBackItemAmount)
                     exports.vorp_inventory:addItem(data.source, usedItems.GiveBackItem, usedItems.GiveBackItemAmount)
                 else
-                    notification = string.format(T.CantCarry, itemLabel, giveBackItemAmount, giveBackItemLabel)
+                    notification = string.format(T.CantCarry, itemLabel, giveBackItemAmount, usedItems.GiveBackItemLabel)
                 end
             end
             VorpCore.NotifyTip(data.source, notification, 4000)

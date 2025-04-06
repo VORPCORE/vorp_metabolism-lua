@@ -223,3 +223,16 @@ function StartMetabolismSetThread()
         Wait(300000);
     end)
 end
+
+if Config.AdminCommandEnable then
+    RegisterCommand(Config.AdminCommand, function()
+        if LocalPlayer.state.Character and Config.AdminGroups[LocalPlayer.state.Character.Group] then
+            TriggerEvent('vorpmetabolism:setValue', 'Thirst', 10000)
+            TriggerEvent('vorpmetabolism:setValue', 'Hunger', 10000)
+        else
+            if Config.DevMode then
+                print("You dont have permission to use this command!")
+            end
+        end
+    end, false)
+end
