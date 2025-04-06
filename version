@@ -1,6 +1,7 @@
 <1.2>
 - Hud Resigned/Renewed
 - Added give back item when using items
+- Added admin command to fill metabolism values
 - Notification time added to translation.lua file
 <1.1>
 - fix for drink animation
