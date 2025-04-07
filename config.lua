@@ -20,7 +20,6 @@ Config = {
 
   FirstMetabolismStatus = 0,           -- Initial metabolism status (0 means no change initially).
 
-
   -- How to Use:
   -- 1. You can adjust the status values (thirst, hunger, metabolism) according to your needs. Higher values will replenish more.
   -- 2. The `PropName` should correspond to a valid in-game object (model) that the player interacts with.
@@ -30,19 +29,23 @@ Config = {
   -- For a full list of other visual effects, check this link:
   -- https://github.com/femga/rdr3_discoveries/blob/master/graphics/animpostfx/animpostfx.lua
   -- You can replace `PlayerDrunkSaloon1` with any other effect from this list, depending on the gameplay experience you want to create.
+
   ItemsToUse = {
     {
-      Name = "whisky",               -- The spawn code or identifier for this item.
-      Thirst = 500,                  -- How much this item replenishes the player's thirst.
-      Hunger = 0,                    -- How much this item replenishes the player's hunger.
-      Metabolism = 150,              -- How much metabolism is affected (positive or negative).
-      Stamina = 50,                  -- How much stamina is affected by consuming this item.
-      InnerCoreHealth = 50,          -- Effect on the player's inner core health.
-      OuterCoreHealth = 25,          -- Effect on the player's outer core health.
-      PropName = "s_inv_whiskey02x", -- The in-game prop model to display when using this item.
-      Animation = "drink",           -- The animation the player will use when consuming this item (e.g., drink or eat).
-      Effect = "PlayerDrunkSaloon1", -- The visual effect applied to the player. This is the 'drunk' effect. For more effects, see the linked URL below.
-      EffectDuration = 1             -- Duration of the effect in minutes (this script converts 1 to 60 seconds).
+      Name = "whisky",                      -- The spawn code or identifier for this item.
+      Thirst = 500,                         -- How much this item replenishes the player's thirst.
+      Hunger = 0,                           -- How much this item replenishes the player's hunger.
+      Metabolism = 150,                     -- How much metabolism is affected (positive or negative).
+      Stamina = 50,                         -- How much stamina is affected by consuming this item.
+      InnerCoreHealth = 50,                 -- Effect on the player's inner core health.
+      OuterCoreHealth = 25,                 -- Effect on the player's outer core health.
+      PropName = "s_inv_whiskey02x",        -- The in-game prop model to display when using this item.
+      Animation = "drink",                  -- The animation the player will use when consuming this item (e.g., drink or eat).
+      Effect = "PlayerDrunkSaloon1",        -- The visual effect applied to the player. This is the 'drunk' effect. For more effects, see the linked URL below.
+      EffectDuration = 1,                   -- Duration of the effect in minutes (this script converts 1 to 60 seconds).
+      GiveBackItemLabel = "Empty Bottle",   -- The display name of the GiveBackItem.
+      GiveBackItem = "empty_bottle",        -- The item given back to the player after using (e.g., an empty bottle after drinking whisky). (If you dont want just leave blank GiveBackItem = "")
+      GiveBackItemAmount = 1                -- The amount of given back item
     },
     {
       Name = "wine",
@@ -55,7 +58,10 @@ Config = {
       PropName = "p_bottlewine01x",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "vodka",
@@ -68,7 +74,10 @@ Config = {
       PropName = "p_bottlemedicine09x",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "beer",
@@ -81,7 +90,10 @@ Config = {
       PropName = "p_bottlebeer01a",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "tequila",
@@ -94,7 +106,10 @@ Config = {
       PropName = "p_bottlechampagne01x",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "tropicalPunchMoonshine",
@@ -107,7 +122,10 @@ Config = {
       PropName = "p_masonjarmoonshine01x",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "wildCiderMoonshine",
@@ -120,7 +138,10 @@ Config = {
       PropName = "p_masonjarmoonshine01x",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "raspberryale",
@@ -133,7 +154,10 @@ Config = {
       PropName = "p_bottlebeer01a",
       Animation = "drink",
       Effect = "PlayerDrunkSaloon1",
-      EffectDuration = 1
+      EffectDuration = 1,
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_bluegil",
@@ -159,7 +183,10 @@ Config = {
       PropName = "p_hamsandwich01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_caramel",
@@ -172,7 +199,10 @@ Config = {
       PropName = "s_candybag01x_blue",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_chocolate",
@@ -185,7 +215,10 @@ Config = {
       PropName = "s_chocolatebar02x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_coffee",
@@ -202,7 +235,10 @@ Config = {
       PropName = "p_mugcoffee01x",
       Animation = "drink",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_fruitsalad",
@@ -215,7 +251,10 @@ Config = {
       PropName = "p_bowl04x_stew",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_game",
@@ -228,7 +267,10 @@ Config = {
       PropName = "p_cs_jerky01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_herb_evergreen_huckleberry",
@@ -241,7 +283,10 @@ Config = {
       PropName = "s_inv_raspberry01bx",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_herb_wintergreen_berry",
@@ -254,7 +299,10 @@ Config = {
       PropName = "s_inv_rhubarb01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_kidneybeans_can",
@@ -267,7 +315,10 @@ Config = {
       PropName = "s_canbeans01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_peach",
@@ -280,7 +331,10 @@ Config = {
       PropName = "s_peach01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_pear",
@@ -293,7 +347,10 @@ Config = {
       PropName = "p_pear_01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_raspberrywater",
@@ -306,7 +363,10 @@ Config = {
       PropName = "p_water01x",
       Animation = "drink",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_salmon",
@@ -319,7 +379,10 @@ Config = {
       PropName = "p_cs_basfishonthewal01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_salmon_can",
@@ -332,7 +395,10 @@ Config = {
       PropName = "s_canbeans01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_trout",
@@ -345,7 +411,10 @@ Config = {
       PropName = "p_cs_fishlargemouthbass01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_veggies",
@@ -358,7 +427,10 @@ Config = {
       PropName = "p_carrot01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "cookedbluegil",
@@ -371,7 +443,10 @@ Config = {
       PropName = "p_cs_fishlargemouthbass01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "milk",
@@ -384,7 +459,10 @@ Config = {
       PropName = "p_bottlejd01x",
       Animation = "drink",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "cheesecake",
@@ -397,7 +475,10 @@ Config = {
       PropName = "p_cheeseblock_a",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_blueberrypie",
@@ -410,7 +491,10 @@ Config = {
       PropName = "p_pie01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_chickenpie",
@@ -423,7 +507,10 @@ Config = {
       PropName = "p_pie01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_chocolatecake",
@@ -436,7 +523,10 @@ Config = {
       PropName = "p_bread01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_chocolatecoffee",
@@ -449,7 +539,10 @@ Config = {
       PropName = "p_mugcoffee01x",
       Animation = "drink",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_coffeecake",
@@ -462,7 +555,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_crumbcake",
@@ -475,7 +571,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_cupcake",
@@ -488,7 +587,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_donut",
@@ -501,7 +603,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_grapejelly",
@@ -514,7 +619,10 @@ Config = {
       PropName = "p_bread01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_horsepeppermints",
@@ -527,7 +635,10 @@ Config = {
       PropName = "s_candybag01x_red",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_lemoncake",
@@ -540,7 +651,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_lemondrops",
@@ -553,7 +667,10 @@ Config = {
       PropName = "s_candybag01x_red",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_peachcobbler",
@@ -566,7 +683,10 @@ Config = {
       PropName = "s_peach01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_peachjelly",
@@ -579,7 +699,10 @@ Config = {
       PropName = "s_peach01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_peppermint",
@@ -592,7 +715,10 @@ Config = {
       PropName = "s_candybag01x_blue",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_poundcake",
@@ -605,7 +731,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_pretzel",
@@ -618,7 +747,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_raspberryjelly",
@@ -631,7 +763,10 @@ Config = {
       PropName = "s_inv_raspberry01bx",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_spongecake",
@@ -644,7 +779,10 @@ Config = {
       PropName = "p_bread03x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     },
     {
       Name = "consumable_steakpie",
@@ -657,7 +795,10 @@ Config = {
       PropName = "p_pie01x",
       Animation = "eat",
       Effect = "",
-      EffectDuration = ""
+      EffectDuration = "",
+      GiveBackItemLabel = "",
+      GiveBackItem = "",
+      GiveBackItemAmount = 1
     }
   }
 }

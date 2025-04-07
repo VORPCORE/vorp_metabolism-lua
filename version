@@ -1,3 +1,7 @@
+<1.2>
+- Hud Resigned/Renewed
+- Added give back item when using items
+- Notification time added to translation.lua file
 <1.1>
 - fix for drink animation
 - fix for removal of crouch animation when using items
