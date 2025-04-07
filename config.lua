@@ -4,13 +4,6 @@ Config = {
 
   UseMetabolism = true,                -- Enable/disable metabolism system. If true, metabolism effects like stamina and hunger will affect players.
 
-  AdminCommandEnable = true,          -- Enable/Disable the admin command that fills metabolism(Thirst/Hunger) values.
-  AdminGroups = {
-    admin = true,
-    -- You can add more
-  },
-  AdminCommand = "consumableAdmin",
-
   EveryTimeStatusDown = 3600,          -- Time interval (in milliseconds) for status drop (3.6 seconds).
   HowAmountThirstWhileRunning = 3,     -- How much thirst decreases while running (value decreases every 3.6 seconds).
   HowAmountHungerWhileRunning = 2,     -- How much hunger decreases while running.
