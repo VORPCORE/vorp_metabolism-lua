@@ -1,7 +1,7 @@
 <1.2>
 - Hud Resigned/Renewed
 - Added give back item when using items
-- Added new 3 animation (Stew, Syringe, Bandage)
+- Added new 4 animation (Stew, Syringe, Bandage, Coffee)
 - Fixed Eat&Drink animation prop placement, rotation
 - Notification time added to translation.lua file
 <1.1>
