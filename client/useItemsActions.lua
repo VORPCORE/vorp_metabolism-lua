@@ -89,6 +89,8 @@ RegisterNetEvent('vorpmetabolism:useItem', function(index, label)
         PlayAnimStew(Config["ItemsToUse"][index]["PropName"])
     elseif (Config["ItemsToUse"][index]["Animation"] == "drink") then
         PlayAnimDrink(Config["ItemsToUse"][index]["PropName"])
+    elseif (Config["ItemsToUse"][index]["Animation"] == "coffee") then
+        PlayAnimCoffee(Config["ItemsToUse"][index]["PropName"])
     elseif (Config["ItemsToUse"][index]["Animation"] == "syringe") then
         PlayAnimSyringe(Config["ItemsToUse"][index]["PropName"])
     elseif (Config["ItemsToUse"][index]["Animation"] == "bandage") then
@@ -105,6 +107,13 @@ function ScreenEffect(effect, durationMinutes)
     AnimpostfxPlay(effect)
     Wait(durationMilliseconds)
     AnimpostfxStop(effect)
+end
+
+function PlayAnimCoffee(propName)
+    local playerCoords = GetEntityCoords(PlayerPedId())
+    local coffeeProp = CreateObject(joaat(propName), playerCoords.x, playerCoords.y, playerCoords.z, true, true, false)
+    Citizen.InvokeNative(0x669655FFB29EF1A9, coffeeProp, 0, "CTRL_cupFill", 1.0)
+    TaskItemInteraction_2(PlayerPedId(), GetHashKey("CONSUMABLE_COFFEE"), coffeeProp, GetHashKey("P_MUGCOFFEE01X_PH_R_HAND"), GetHashKey("DRINK_COFFEE_HOLD"), 1, 0, -1082130432)
 end
 
 function PlayAnimBandage(propName)

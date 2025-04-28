@@ -15,8 +15,8 @@ __Hud redesigned by Z-eus__
 
 - **Metabolism System**: Manages hunger, thirst, and metabolism stats, with configurable rates for each.
 - **Consumable Items**: Items such as food and drinks that restore thirst, hunger, and stamina.
-- **Effects System**: Allows application of visual effects (e.g., `PlayerDrunkSaloon1`) when players consume certain items. 
-- **Configurable Animations**: Each consumable has its associated animation drink/eat/stew/syringe/bandage
+- **Effects System**: Allows application of visual effects (e.g., `PlayerDrunkSaloon1`) when players consume certain items.
+- **Configurable Animations**: Each consumable has its associated animation drink/coffee/eat/stew/syringe/bandage
 - **Give Back Item:** Item given back to the player after consumable
 
 ## Configuration
@@ -58,7 +58,7 @@ To add a new consumable item, follow this structure:
     InnerCoreHealth = 50,                -- How much inner core health is affected.
     OuterCoreHealth = 25,                -- How much outer core health is affected.
     PropName = "prop_name",              -- The in-game prop to display while using the item.
-    Animation = "animation",             -- The animation the player will use when consuming this item drink/eat/stew/syringe/bandage
+    Animation = "animation",             -- The animation the player will use when consuming this item drink/coffee/eat/stew/syringe/bandage
     Effect = "effect_name",              -- (Optional) Any visual effect applied when consuming the item.
     EffectDuration = 1,                  -- (Optional) Duration of the effect in minutes.
     GiveBackItemLabel = "item_label",    -- The display name of the GiveBackItem.
